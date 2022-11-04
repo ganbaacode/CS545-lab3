@@ -22,6 +22,9 @@ public class Post {
     private String content;
     private String author;
 
+    @ManyToOne
+    private User user;
+
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @Fetch(FetchMode.SELECT)
     @JoinColumn(name = "post_id")
